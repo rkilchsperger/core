@@ -800,7 +800,7 @@ class HueApi:
         latest_xy = entity_attr.get(
             const.HASS_ATTR_XY_COLOR, last_light_state.get(const.HUE_ATTR_XY, [0, 0])
         )
-        latest_hue = entity_attr.get(const.HASS_ATTR_HS_COLOR, [0, 0])[0]
+       latest_hue = (entity_attr.get(const.HASS_ATTR_HS_COLOR) or [0, 0])[0]
         latest_hue = (
             latest_hue if latest_hue else last_light_state.get(const.HUE_ATTR_HUE, 0)
         )
